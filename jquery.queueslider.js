@@ -40,6 +40,9 @@
         return;
       }
 
+      // calculate viewport width
+      state.viewport.width = $(settings.viewport).width();
+
       // Initialize our common jQuery variables and the slide count.
       $queue = $('.queue', $slider);
       $slides = $('.queue > li', $slider);
@@ -161,7 +164,7 @@
 
     var resizeQueueSlider = function(e) {
       state.busy = true;
-      state.viewport.width = $(window).width();
+      state.viewport.width = $(settings.viewport).width();
       computeQueueSizes();
       setQueueHeight();
       if (settings.mode === 'horizontal') {
@@ -556,6 +559,7 @@
 
   $.fn.queueSlider.defaults = {
     mode: 'horizontal',     // Use horizontal or fade
+    viewport: window,       // The default viewport for calculating the width in horizontal mode
     alignMode: 'center',    // Use center, left, or right to align the slider
     delay: 0,               // Delay the start of slider
     fade: 0.3,              // Opacity of images not being viewed, use -1 to disable

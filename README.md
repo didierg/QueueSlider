@@ -14,6 +14,7 @@ Download the [production version][min] or the [development version][max].
 ```javascript
 {
   mode: 'horizontal',     // Use horizontal or fade
+  viewport: window,       // In horizontal mode, used to calculate the width
   alignMode: 'center',    // Use center, left, or right to align the slider
   delay: 0,               // Delay the start of slider
   fade: 0.3,              // Opacity of images not being viewed, use -1 to disable
@@ -138,6 +139,8 @@ $slider.bind('slideEnd', function(e, index) {
 * Safari (latest version)
 
 ## Changelog
+* _02.17.15 - v1.2.6 - 6.585kb_
+  * Add viewport option.
 * _11.28.14 - v1.2.5 - 6.526kb_
   * Add pause() public function.
 * _11.15.14 - v1.2.4 - 6.484kb_
